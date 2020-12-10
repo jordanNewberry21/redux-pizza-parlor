@@ -11,13 +11,21 @@ class CustomerForm extends Component{
     render(){
         return(
             <div>
-                <header>
-                    <h2>Hello from _template component </h2>
-                </header>
-                    <input placeholder="name" onChange={(event) => this.handleChange(event, 'name')}/> 
-                    <input placeholder="street adress" onChange={(event) => this.handleChange(event, 'name')}/> 
-                    <input placeholder="street adress" onChange={(event) => this.handleChange(event, 'name')}/> 
-                    <input placeholder="street adress" onChange={(event) => this.handleChange(event, 'name')}/> 
+                    <input placeholder="customer_name" onChange={(event) => this.handleChange(event, 'name')}/> 
+                    <br/>
+                    <br/>
+                    <input placeholder="street_address" onChange={(event) => this.handleChange(event, 'name')}/> 
+                    <br/>
+                    <br/>
+                    <input placeholder="city" onChange={(event) => this.handleChange(event, 'name')}/> 
+                    <br/>
+                    <br/>
+                    <input placeholder="zip" onChange={(event) => this.handleChange(event, 'name')}/> 
+                    <br/>
+                    <br/>
+                    <p>total</p>
+                    <button>Checkout</button>
+                    
             </div>
         ) 
     } 
