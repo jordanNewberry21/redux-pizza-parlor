@@ -17,4 +17,4 @@ class PizzaListItem extends Component{
 } //end class 
 
 //export
-export default connect(PizzaListItem); 
+export default connect()(PizzaListItem); 

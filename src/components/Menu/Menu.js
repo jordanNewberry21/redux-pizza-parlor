@@ -20,7 +20,7 @@ class Menu extends Component{
           console.log( err );
           alert( 'problem with GET' );
         }) //end axios
-      } // end get Pizza
+      } // end getPizza
     
 
     render(){
