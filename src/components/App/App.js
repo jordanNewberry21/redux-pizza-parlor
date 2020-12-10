@@ -5,6 +5,7 @@ import Menu from '../Menu/Menu';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import AdminOrders from '../AdminOrders/AdminOrders';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -26,4 +27,4 @@ class App extends Component {
   }
 }//end render
 
-export default App;
+export default connect()(App);
