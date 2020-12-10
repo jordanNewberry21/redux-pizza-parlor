@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 //class
-class  extends Component{
+class AdminOrders extends Component{
     render(){
         return(
             <div>
