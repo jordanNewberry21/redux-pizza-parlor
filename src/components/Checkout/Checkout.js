@@ -16,25 +16,27 @@ class Checkout extends Component{
         console.log('In function checkout');
         this.props.history.push('/');
     }
+    
 
     render(){
+        const customer = this.props.reduxState.clientReducer;
         return(
             <div>
                 <section>
                 <h2>Step 3: Checkout </h2>
-                <p>Customer Name</p>
-                <p>Customer Street Address</p>
-                <p>Customer city, Customer State</p>
+                <p>{customer.customer_name}</p>
+                <p>{customer.street_address}</p>
+                <p>{customer.city}, {customer.zip}</p>
                 </section>
                 <section>
-                    <h4>Delivery or Pickup status</h4>
+                    <h4>{customer.type}</h4>
                 </section>
                 <section>
                     <table>
                         <thead>
                             <tr>
-                                <th>Pizza Name</th>
-                                <th>Pizza Cost</th>
+                                <th>Name</th>
+                                <th>Cost</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,12 +44,15 @@ class Checkout extends Component{
                         </tbody>
                     </table>
                 </section>
-                <section>TOTAL COST</section>
+                <section>{customer.total}</section>
                 <button onClick={this.checkout}>CHECKOUT</button>
             </div>
         ) //end return 
     } //end render
 } //end class 
 
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+  })
 //export
-export default withRouter(connect()(Checkout)); 
+export default withRouter(connect(putReduxStateOnProps)(Checkout)); 
