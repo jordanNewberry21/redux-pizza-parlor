@@ -1,5 +1,6 @@
 //imports //imports JUST the component from react not ALL of react 
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 //class
 class PizzaListItem extends Component{
@@ -16,4 +17,4 @@ class PizzaListItem extends Component{
 } //end class 
 
 //export
-export default PizzaListItem; 
+export default connect(PizzaListItem); 
