@@ -10,11 +10,11 @@ class CustomerForm extends Component{
     state = { 
         newOrder: { 
             customer_name: '',
-            street_address: '', 
-            city: '', 
-            zip: '', 
+            street_address: '',
+            city: '',
+            zip: '',
             type: '',
-            total: '23', 
+            total: '23',
         }
     }
 
@@ -22,7 +22,7 @@ class CustomerForm extends Component{
         console.log('checking out', this.state.newOrder); 
         this.props.dispatch( { type: 'ADD_ORDER', payload: this.state.newOrder} )
     }
-3
+
      handleChange = (event, inputType) => { 
         console.log(inputType, '=', event.target.value)
         this.setState({     

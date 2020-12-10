@@ -24,12 +24,21 @@ const checkoutReducer = (state=[], action) => {
     return state;
 }
 
+//client reducer
+const clientReducer = (state=[], action) => {
+    if (action.type === 'ADD_ORDER'){
+        return action.payload
+    }
+    return state;
+}
+
 
 // The store is the big JavaScript Object that holds all of the information for our application
 const storeInstance = createStore(
     combineReducers({
         pizzaReducer,
-        checkoutReducer
+        checkoutReducer,
+        clientReducer
     }),
     applyMiddleware(logger),
 );
