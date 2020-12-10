@@ -1,12 +1,17 @@
 //imports //imports JUST the component from react not ALL of react 
 import React, { Component } from 'react';
+import PizzaListItem from '../PizzaListItem/PizzaListItem';
 
 //class
-class  extends Component{
+class PizzaList extends Component{
     render(){
         return(
             <div>
-                <h2>Hello from PizzaList component </h2>
+                       {this.props.pizzaList.map((item) => {
+                       return (
+                           <PizzaListItem key={item.id} pizza={item} />
+                       );
+                   })} 
             </div>
         ) //end return 
     } //end render

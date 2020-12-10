@@ -2,11 +2,14 @@
 import React, { Component } from 'react';
 
 //class
-class  extends Component{
+class PizzaListItem extends Component{
     render(){
         return(
-            <div>
-                <h2>Hello from PizzaListItem component </h2>
+            <div className="pizza">
+                <img src={this.props.pizza.image_path} alt="pizza pictures"></img>
+                <h2>{this.props.pizza.name}</h2>
+                <h4>{this.props.pizza.description}</h4>
+                <p>{this.props.pizza.price}</p>
             </div>
         ) //end return 
     } //end render
