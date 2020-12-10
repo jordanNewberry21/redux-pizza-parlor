@@ -3,7 +3,9 @@ import axios from 'axios';
 import './App.css';
 import Menu from '../Menu/Menu';
 import CustomerForm from '../CustomerForm/CustomerForm';
+import AdminOrders from '../AdminOrders/AdminOrders';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -16,12 +18,13 @@ class App extends Component {
         <img src="images/pizza_photo.png"/>
         <p>Pizza is great.</p> 
         <Router> 
-          <Route Route exact path="/" component={Menu}/>
-          <Route Route exact path="/customer-form" component={CustomerForm}/>
+          <Route exact path="/" component={Menu}/>
+          <Route exact path="/customer-form" component={CustomerForm}/>
+          <Route path="/admin" component={AdminOrders}/>
         </Router>
       </div>
     );
   }
 }//end render
 
-export default App;
+export default connect()(App);
