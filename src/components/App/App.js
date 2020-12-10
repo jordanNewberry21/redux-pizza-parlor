@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import Menu from '../Menu/Menu';
+import CustomerForm from '../CustomerForm/CustomerForm';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -11,7 +14,11 @@ class App extends Component {
         </header>
         <br/>
         <img src="images/pizza_photo.png"/>
-        <p>Pizza is great.</p>
+        <p>Pizza is great.</p> 
+        <Router> 
+          <Route Route exact path="/" component={Menu}/>
+          <Route Route exact path="/customer-form" component={CustomerForm}/>
+        </Router>
       </div>
     );
   }

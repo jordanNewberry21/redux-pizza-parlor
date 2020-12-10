@@ -89,7 +89,7 @@ When visiting [http://localhost:3000/](http://localhost:3000/) display all of th
 This page should have a next button that brings the user to the **enter order details page**.
 
 ![Select Pizza View](wireframes/screen-one.png)
-
+z
 ### ORDER - ENTER CUSTOMER INFORMATION
 
 Collect user information, *name*, *street address*, *city* and *zip*. This page should have an option to select pickup vs. delivery. The total cost of the order should appear in the top right of this page. This page should have a next button that brings the user to the **checkout** page.
