@@ -54,7 +54,15 @@ class Checkout extends Component{
                             </tr>
                         </thead>
                         <tbody>
-                            {/* add pizzaReducer map here */}
+                            {
+                            this.props.reduxState.checkoutReducer.map((pizza) => 
+                                <tr>
+                                    <td>{pizza.name}</td>
+                                    <td>{pizza.price}</td>
+                                
+                                </tr>
+                            )
+                            } 
                         </tbody>
                     </table>
                 </section>
