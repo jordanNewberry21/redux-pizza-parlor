@@ -31,18 +31,33 @@ class App extends Component {
       })
   }
 
+  deletePizza = (idToDelete) => {
+    axios.delete(`/api/order/${idToDelete}`)
+      .then(response => {
+        this.getOrders();
+      })
+      .catch(error => {
+        console.log(`Error removing item`, error);
+        alert(`Could not remove item at this time. Please try again later.`);
+      })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <br />
         <img src="images/pizza_photo.png" alt='cheese pizza' />
-        <p><PizzaIcon/>Pizza is great.<PizzaIcon/></p>
+        <p><PizzaIcon />Pizza is great.<PizzaIcon /></p>
         <Router>
           <Route exact path="/" component={Menu} />
           <Route exact path="/customer-form" component={CustomerForm} />
           <Route path="/admin">
-            <AdminOrders getOrders={this.getOrders} orderHistory={this.state.orderHistory} />
+            <AdminOrders
+              getOrders={this.getOrders}
+              orderHistory={this.state.orderHistory}
+              deletePizza={this.deletePizza}
+            />
           </Route>
           <Route path="/checkout" component={Checkout} />
         </Router>
