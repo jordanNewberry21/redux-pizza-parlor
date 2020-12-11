@@ -15,7 +15,7 @@ class AdminOrders extends Component {
             <div>
                 <PizzaTable
                     orderHistory={this.props.orderHistory}
-                    deleteItem={this.deletePizza} />
+                    deletePizza={this.props.deletePizza} />
             </div>
         ) //end return 
     } //end render
