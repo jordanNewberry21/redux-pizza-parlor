@@ -7,6 +7,10 @@ import { connect } from 'react-redux';
 //class
 class CustomerForm extends Component{ 
 
+    componentDidMount() { 
+        this.setTotal(); 
+    }
+
     state = { 
         newOrder: { 
             customer_name: '',
@@ -18,9 +22,7 @@ class CustomerForm extends Component{
         }
     }
 
-   
     checkout = () => { 
-        this.total(); 
         console.log('checking out', this.state.newOrder); 
         this.props.dispatch( { type: 'ADD_ORDER', payload: this.state.newOrder} ); 
         this.props.history.push('/checkout');
@@ -37,7 +39,7 @@ class CustomerForm extends Component{
     }
 
 
-    total = () => { 
+    setTotal = () => { 
         let total = 0; 
         for (const pizza of this.props.reduxState.checkoutReducer) { 
             total += pizza.price/1; 
@@ -54,6 +56,8 @@ class CustomerForm extends Component{
     // CHECKOUT_PIZZA
 
     render(){ 
+
+        console.log(this.state.newOrder.total)
 
         return(
             <div>
