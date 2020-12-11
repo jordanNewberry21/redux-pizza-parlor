@@ -20,11 +20,16 @@
   margin-right: 1em;
   margin-bottom: 1em;
   background-color: #222;
-  color: white;
-  
+  color: black;
+  background-image: url('/images/pizza_photo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
 }

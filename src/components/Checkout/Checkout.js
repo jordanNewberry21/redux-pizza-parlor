@@ -6,15 +6,29 @@ import axios from 'axios';
 
 //class
 class Checkout extends Component{
+
+    state = {
+       
+        customer_name: this.props.reduxState.clientReducer.customer_name,
+        street_address: this.props.reduxState.clientReducer.street_address,
+        city: this.props.reduxState.clientReducer.city,
+        zip: this.props.reduxState.clientReducer.zip,
+        type: this.props.reduxState.clientReducer.type,
+        total: this.props.reduxState.clientReducer.total,
+        pizzas: this.props.reduxState.checkoutReducer,
+        
+    }
+
     checkout = () => {
-        axios.post('/api/order').then((response) => {
+        axios.post('/api/order', this.state).then((response) => {
             console.log('back from POST......', response.data);
         }).catch((error) => {
             console.log('error with POST.......', error)
             alert('Something wrong with the POST')
         })
         console.log('In function checkout');
-        this.props.history.push('/');
+        this.props.history.push('/'); 
+        this.props.dispatch( { type: 'END_ORDER' } );
     }
     
 
