@@ -12,6 +12,8 @@ import { Provider } from 'react-redux';
 const pizzaReducer = (state = [], action) => {
     if (action.type === 'SEND_PIZZA') {
         return action.payload
+    } else if (action.type === 'END_ORDER'){
+        return state;
     }
     return state;
 }
