@@ -83,7 +83,7 @@ class CustomerForm extends Component{
                 </form>
                 <p className="total-p">total: </p> 
                 <button className="checkout-btn" value="checkout" onClick={this.checkout}>Checkout</button>          
-                {JSON.stringify(this.props.reduxState.checkoutReducer)}
+                {/* {JSON.stringify(this.props.reduxState.checkoutReducer)} */}
             </div>
         ) 
     } 

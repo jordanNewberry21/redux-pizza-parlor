@@ -12,6 +12,8 @@ import { Provider } from 'react-redux';
 const pizzaReducer = (state = [], action) => {
     if (action.type === 'SEND_PIZZA') {
         return action.payload
+    } else if (action.type === 'END_ORDER'){
+        return state;
     }
     return state;
 }
@@ -20,9 +22,8 @@ const pizzaReducer = (state = [], action) => {
 const checkoutReducer = (state=[], action) => {
     if (action.type === 'CHECKOUT_PIZZA'){
         return [...state, action.payload]
-    } 
-    if (action.type === 'CHECKOUT_PIZZA') { 
-        return state 
+    } else if (action.type === 'DELETE_PIZZA'){
+        return state.filter(element => action.payload !== element.id);
     }
     return state;
 }
