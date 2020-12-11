@@ -20,6 +20,9 @@ const pizzaReducer = (state = [], action) => {
 const checkoutReducer = (state=[], action) => {
     if (action.type === 'CHECKOUT_PIZZA'){
         return [...state, action.payload]
+    } 
+    if (action.type === 'CHECKOUT_PIZZA') { 
+        return state 
     }
     return state;
 }

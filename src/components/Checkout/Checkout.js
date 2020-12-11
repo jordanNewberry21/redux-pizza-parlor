@@ -27,7 +27,8 @@ class Checkout extends Component{
             alert('Something wrong with the POST')
         })
         console.log('In function checkout');
-        this.props.history.push('/');
+        this.props.history.push('/'); 
+        this.props.dispatch( { type: 'END_ORDER' } );
     }
     
 
