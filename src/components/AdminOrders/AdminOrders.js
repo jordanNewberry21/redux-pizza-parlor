@@ -1,21 +1,21 @@
 //imports //imports JUST the component from react not ALL of react 
 import React, { Component } from 'react';
+import PizzaTable from '../PizzaTable/PizzaTable'
 
 //class
-class AdminOrders extends Component{
+class AdminOrders extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         console.log('admin order mounted');
         this.props.getOrders()
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <h2>Hello from AdminOrders component </h2>
-                {this.props.orderHistory.map( order => 
-                    <p key={order.id} >hey there</p>
-                    )}
+                <PizzaTable
+                    orderHistory={this.props.orderHistory}
+                    deleteItem={this.deletePizza} />
             </div>
         ) //end return 
     } //end render
