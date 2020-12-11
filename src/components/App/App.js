@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import Menu from '../Menu/Menu';
 import CustomerForm from '../CustomerForm/CustomerForm';
