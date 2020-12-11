@@ -18,9 +18,12 @@ class CustomerForm extends Component{
         }
     }
 
+   
     checkout = () => { 
+        this.total(); 
         console.log('checking out', this.state.newOrder); 
-        this.props.dispatch( { type: 'ADD_ORDER', payload: this.state.newOrder} )
+        this.props.dispatch( { type: 'ADD_ORDER', payload: this.state.newOrder} ); 
+        this.props.history.push('/checkout');
     }
 
      handleChange = (event, inputType) => { 
@@ -34,9 +37,24 @@ class CustomerForm extends Component{
     }
 
 
+    total = () => { 
+        let total = 0; 
+        for (const pizza of this.props.reduxState.checkoutReducer) { 
+            total += pizza.price/1; 
+            console.log('pizza.price is', pizza.price); 
+            console.log('total is', total); 
+        } 
+        this.setState({     
+            newOrder: { 
+                ...this.state.newOrder,
+                total: total
+            }  
+        }) 
+    }
     // CHECKOUT_PIZZA
 
-    render(){
+    render(){ 
+
         return(
             <div>
                 <input placeholder="customer_name" onChange={(event) => this.handleChange(event, 'customer_name')}/> 
@@ -61,6 +79,7 @@ class CustomerForm extends Component{
                 </form>
                 <p className="total-p">total: </p> 
                 <button className="checkout-btn" value="checkout" onClick={this.checkout}>Checkout</button>          
+                {JSON.stringify(this.props.reduxState.checkoutReducer)}
             </div>
         ) 
     } 
