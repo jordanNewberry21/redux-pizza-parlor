@@ -8,6 +8,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../Header/Header';
 import Checkout from '../Checkout/Checkout';
+import PizzaIcon from '@material-ui/icons/LocalPizza';
 
 
 class App extends Component {
@@ -35,8 +36,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <br />
-        <img src="images/pizza_photo.png" />
-        <p>Pizza is great.</p>
+        <img src="images/pizza_photo.png" alt='cheese pizza' />
+        <p><PizzaIcon/>Pizza is great.<PizzaIcon/></p>
         <Router>
           <Route exact path="/" component={Menu} />
           <Route exact path="/customer-form" component={CustomerForm} />
