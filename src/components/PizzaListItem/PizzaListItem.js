@@ -24,6 +24,7 @@ class PizzaListItem extends Component{
         this.setState({
             buttonClick: !this.state.buttonClick
         })
+        this.props.dispatch( { type: 'DELETE_PIZZA', payload: this.props.pizza.id})
     }
 
     render(){
